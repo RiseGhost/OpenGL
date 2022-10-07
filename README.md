@@ -89,6 +89,50 @@ Para limpar o background pordemos utilizar a função __glClear()__. Ela recebe 
 glClear(GL_COLOR_BUFFER_BIT);
 ```
 
+## Run the Window:
+O código a baixo é capaz de executar uma janela de 640 x 480 com o fundo todo branco.
+
+```C++
+#include <GLFW/glfw3.h>
+
+int main(void)
+{
+    GLFWwindow* window;
+
+    /* Initialize the library */
+    glfwInit();
+
+    /* Create a windowed mode window and its OpenGL context */
+    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    if (!window)
+    {
+        glfwTerminate();
+        return -1;
+    }
+
+    /* Make the window's context current */
+    glfwMakeContextCurrent(window);
+
+    /* Loop until the user closes the window */
+    while (!glfwWindowShouldClose(window))
+    {
+        /* Window Background Color:*/
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        /* Render here */
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        /* Swap front and back buffers */
+        glfwSwapBuffers(window);
+
+        /* Poll for and process events */
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
+    return 0;
+}
+```
+
 ## OpenGL glfwWindowHint table options:
 Na tabela a baixo estão precentes algumas funções que são possiveis serem feitas utilizando o __glfwWindowHint()__:
 <table style="width:100%">
