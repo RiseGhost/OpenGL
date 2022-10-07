@@ -48,6 +48,19 @@ fprintf(stdout, "height -> %i\n", mode->height);
 fprintf(stdout, "framerate -> %i\n", mode->refreshRate);
 ```
 
+### Physical size 📐:
+Utilizando a função __glfwGetMonitorPhysicalSize()__, conseguimos fazer isso que maneira fácil. Ela recebe 3 argumentos:
+- GLFWmonitor * monitor,
+- int* width
+- int* height
+
+```C++
+	int width_mm, height_mm;
+    glfwGetMonitorPhysicalSize(glfwGetPrimaryMonitor(), &width_mm, &height_mm);
+    fprintf(stdout, "width -> %i height -> %i\n", width_mm, height_mm);
+```
+Os valores do comprimento e da altura ficam guardados nas váriaveis, wifth_mm e height_mm, repetivamente em milimetros.
+
 ## Create full screen window 🪟:
 Para criar uma janela em tela cheia vamos utilizadar as informações do monitor.
 
