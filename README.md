@@ -60,6 +60,22 @@ GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "Full screen Wi
 
 O que estamos a fazer é criar uma janela em full screen com o tamanho do ecrã 🖥 do nosso utilizador.  A resolução pode ser diferente da do ecrã do utilizador, o que acontece é se for menor a tela aparece com barras pretas a volta se for maior simplesmente sai da tela.
 
+## OpenGL background:
+### Change Background Color:
+Para poder alterar a cor de fundo basta utilizar a função __glClearColor()__. Ela recebe 4 argumentos do tipo float entre 1.0 e 0.0. Onde 1.0 seria o 255 e o 0.0 seria o 0. O ultimo argumento é o alpha channel, responsável pelo opacidade.
+
+```C++
+glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+```
+
+Neste caso estamos a colocar a cor de fundo branca com a opacidade no máximo.
+### Clear background:
+Para limpar o background pordemos utilizar a função __glClear()__. Ela recebe apenas um argumento que é um color buffer.
+
+```C++
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
 ## OpenGL glfwWindowHint table options:
 Na tabela a baixo estão precentes algumas funções que são possiveis serem feitas utilizando o __glfwWindowHint()__:
 <table style="width:100%">
