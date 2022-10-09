@@ -282,7 +282,7 @@ Sempre que a janela muda de tamanho o __GLFW__ chama esta função e preenche os
 
 ```C++
 void AjustWindow(GLFWwindow* window, int width, int height) {
-    glViewport(0, 0, width, height);
+	glViewport(0, 0, width, height);
 }
 
 int main(void){
