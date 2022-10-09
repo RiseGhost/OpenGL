@@ -240,3 +240,33 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 		</td>
 	</tr>
 <table>
+
+## OpenGL Viewport:
+O __Viewport__ serve para informar ao OpenGL o tamanho da janela de renderização.
+
+```C++
+glViewport(int x,int y,int Width,int Height)
+```
+
+<table>
+<tr>
+<td>
+
+```C++
+glViewport(0, 0, WindowWidth, WindowHeight);
+```
+
+</td>
+<td>
+
+```C++
+glViewport(100, 100, 420, 420);             
+```
+
+</td>
+</tr>
+<tr>
+	<td><img src="https://user-images.githubusercontent.com/91985039/194772299-4c2e2cac-e997-48b0-8dcc-e078f9e6d5e1.jpg"></td>
+	<td><img src="https://user-images.githubusercontent.com/91985039/194772298-a8ac5dc1-4a53-424f-b83a-2748099e9fb0.jpg"></td>
+</tr>
+</table>
