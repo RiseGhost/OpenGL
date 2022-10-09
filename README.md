@@ -55,9 +55,9 @@ Utilizando a função __glfwGetMonitorPhysicalSize()__, conseguimos fazer isso q
 - int* height
 
 ```C++
-	int width_mm, height_mm;
-    glfwGetMonitorPhysicalSize(glfwGetPrimaryMonitor(), &width_mm, &height_mm);
-    fprintf(stdout, "width -> %i height -> %i\n", width_mm, height_mm);
+int width_mm, height_mm;
+glfwGetMonitorPhysicalSize(glfwGetPrimaryMonitor(), &width_mm, &height_mm);
+fprintf(stdout, "width -> %i height -> %i\n", width_mm, height_mm);
 ```
 Os valores do comprimento e da altura ficam guardados nas váriaveis, wifth_mm e height_mm, repetivamente em milimetros.
 
