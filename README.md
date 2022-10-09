@@ -287,7 +287,7 @@ void AjustWindow(GLFWwindow* window, int width, int height) {
 
 int main(void){
 	// Initialise GLFW
-    glfwInit();
+	glfwInit();
 
 	GLFWwindow* window = glfwCreateWindow(800, 800, "AjustWindow ", NULL, NULL);
 	glfwSetFramebufferSizeCallback(window, AjustWindow);
