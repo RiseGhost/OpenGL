@@ -241,7 +241,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 <table>
 
-## OpenGL Viewport:
+## OpenGL Viewport (janela de visualização) 👁️:
 O __Viewport__ serve para informar ao OpenGL o tamanho da janela de renderização.
 
 ```C++
@@ -268,5 +268,43 @@ glViewport(100, 100, 420, 420);
 <tr>
 	<td><img src="https://user-images.githubusercontent.com/91985039/194772299-4c2e2cac-e997-48b0-8dcc-e078f9e6d5e1.jpg"></td>
 	<td><img src="https://user-images.githubusercontent.com/91985039/194772298-a8ac5dc1-4a53-424f-b83a-2748099e9fb0.jpg"></td>
+</tr>
+</table>
+
+## Ajustar a rendeziração sempre que o tamanho da janela variar 📐🪟:
+No momento em que utilizador redimensina a janela, a janela de visualização també deve ser ajustada. Podemos registar uma função de retorno de chamada na janela que é chamada toda a vez que a janela é redimensionada. Esta função de callback tem o seguinte protótipo:
+
+```C++
+void AjustWindow(GLFWwindow* window, int width, int height)
+```
+
+Sempre que a janela muda de tamanho o __GLFW__ chama esta função e preenche os argumentos.
+
+```C++
+void AjustWindow(GLFWwindow* window, int width, int height) {
+    glViewport(0, 0, width, height);
+}
+
+int main(void){
+	// Initialise GLFW
+    glfwInit();
+
+	GLFWwindow* window = glfwCreateWindow(800, 800, "AjustWindow ", NULL, NULL);
+	glfwSetFramebufferSizeCallback(window, AjustWindow);
+}
+```
+O code block de cima encontra-se simplificado.
+
+<table>
+<tr>
+<th colspan="2">Exemplo:</th>
+</tr>
+<tr>
+<td>
+<img src="https://user-images.githubusercontent.com/91985039/194774260-11fab047-f09d-492c-bae8-71371072f38c.jpg">
+</td>
+<td>
+<img src="https://user-images.githubusercontent.com/91985039/194774267-469f29d7-bae2-45cc-a484-cf6177e598bc.jpg">
+</td>
 </tr>
 </table>
