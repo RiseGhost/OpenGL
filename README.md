@@ -73,8 +73,8 @@ GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "Full screen Wi
 
 O que estamos a fazer é criar uma janela em full screen com o tamanho do ecrã 🖥 do nosso utilizador.  A resolução pode ser diferente da do ecrã do utilizador, o que acontece é se for menor a tela aparece com barras pretas a volta se for maior simplesmente sai da tela.
 
-## OpenGL background:
-### Change Background Color:
+## OpenGL background 🖼️:
+### Change Background Color 🎨:
 Para poder alterar a cor de fundo basta utilizar a função __glClearColor()__. Ela recebe 4 argumentos do tipo float entre 1.0 e 0.0. Onde 1.0 seria o 255 e o 0.0 seria o 0. O ultimo argumento é o alpha channel, responsável pelo opacidade.
 
 ```C++
@@ -82,14 +82,14 @@ glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 ```
 
 Neste caso estamos a colocar a cor de fundo branca com a opacidade no máximo.
-### Clear background:
+### Clear background 🧹:
 Para limpar o background pordemos utilizar a função __glClear()__. Ela recebe apenas um argumento que é um color buffer.
 
 ```C++
 glClear(GL_COLOR_BUFFER_BIT);
 ```
 
-## Run the Window:
+## Run the Window 🪟👟:
 O código a baixo é capaz de executar uma janela de 640 x 480 com o fundo todo branco.
 
 ```C++
@@ -282,7 +282,7 @@ Sempre que a janela muda de tamanho o __GLFW__ chama esta função e preenche os
 
 ```C++
 void AjustWindow(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
+    glViewport(0, 0, width, height);
 }
 
 int main(void){
@@ -308,3 +308,48 @@ O code block de cima encontra-se simplificado.
 </td>
 </tr>
 </table>
+
+## FPS count 🎞️⌛:
+Para contar o número de frames por segundo utilizei duas váriaveis. O __framecount__ que serve para contar o número de frames que foram produzidos e o __previousTime__ que serve para guarda o instante de tempo inicial.
+
+```C++
+#include <GLFW/glfw3.h>
+#include <stdio.h>
+double previousTime = glfwGetTime();
+int framecount = 0;
+
+void ShowFPS(double currentTime) {
+    if (currentTime - previousTime >= 1)
+    {
+        fprintf(stdout, "\r           ");
+        fprintf(stdout, "\rfps -> %i", framecount);
+
+        framecount = 0;
+        previousTime = currentTime;
+    }
+}
+
+int main(void)
+{ 
+	!glfwInit();
+    GLFWwindow* window = glfwCreateWindow(750, 920, "Hello World", NULL, NULL);
+    glfwMakeContextCurrent(window);
+
+    while (!glfwWindowShouldClose(window))
+    {
+        framecount++;
+        ShowFPS(glfwGetTime());
+        
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        glfwSwapBuffers(window);
+        
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
+    return 0;
+}
+```
+
+Basicamente sempre que o a diferença entre o __previousTime__ e o tempo atual(__currentTime__) for maior que 1, ou seja 1 segundo, ele imprime o número de frames que foram feitos. O __previousTime__ passa a ser o __currentTime__ e o __framecount__ volta a zero.
