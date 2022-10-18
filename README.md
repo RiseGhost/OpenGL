@@ -146,7 +146,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_SAMPLES, 4)
+			glfwWindowHint(GLFW_SAMPLES, 4)
 		</td>
 	</tr>
 	<tr>
@@ -155,7 +155,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_FOCUSED, 0)
+			glfwWindowHint(GLFW_FOCUSED, 0)
 		</td>
 	</tr>
 	<tr>
@@ -164,7 +164,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_RESIZABLE, GL_TRUE)
+			glfwWindowHint(GLFW_RESIZABLE, GL_TRUE)
 		</td>
 	</tr>
 	<tr>
@@ -173,7 +173,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_MAXIMIZED, GLFW_FALSE)
+			glfwWindowHint(GLFW_MAXIMIZED, GLFW_FALSE)
 		</td>
 	</tr>
 	<tr>
@@ -182,7 +182,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE)
+			glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE)
 		</td>
 	</tr>
 	<tr>
@@ -191,7 +191,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_VISUBLE, GLFW_FALSE)
+			glfwWindowHint(GLFW_VISUBLE, GLFW_FALSE)
 		</td>
 	</tr>
 	<tr>
@@ -227,7 +227,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_CONTEXT_VERSION_MAJOR, 3)
+			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3)
 		</td>
 	</tr>
 	<tr>
@@ -236,7 +236,7 @@ Na tabela a baixo estão precentes algumas funções que são possiveis serem fe
 	</tr>
 	<tr style="text-align:center">
 		<td colspan="2">
-			glfwWindowHint(GFLW_CONTEXT_VERSION_MINOR, 2)
+			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2)
 		</td>
 	</tr>
 <table>
